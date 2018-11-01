@@ -6,7 +6,8 @@ OpenLDAP 是 LDAP 协议的开源实现版本，通过 Dokcer 快速启动 LDAP 
 
 ```
 docker run --name kiss-ldap --env LDAP_ORGANISATION="KissCloud" --env LDAP_DOMAIN="kisscloud.io" \
---env LDAP_ADMIN_PASSWORD="kisscloud" --detach osixia/openldap:1.2.2
+--env LDAP_ADMIN_PASSWORD="kisscloud" --detach 
+- 389:389 osixia/openldap:1.2.2
 ```
 
 ## 2.查看管理员信息
@@ -51,7 +52,15 @@ result: 0 Success
 # numEntries: 2
 ```
 
+## 3. Spring Boot 配置
 
-## 3. 参考链接
+```
+spring.ldap.urls=ldap://localhost:389
+spring.ldap.username=cn=admin,dc=kisscloud,dc=io
+spring.ldap.password=kisscloud
+spring.ldap.base=dc=kisscloud,dc=io
+```
+
+## 4. 参考链接
 
 [https://github.com/osixia/docker-openldap](https://github.com/osixia/docker-openldap)
