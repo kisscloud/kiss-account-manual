@@ -1,8 +1,8 @@
-# 启动 OpenLDAP
-
-OpenLDAP 是 LDAP 协议的开源实现版本，通过 Dokcer 快速启动 LDAP 服务器。
+# 使用 LDAP
 
 ## 1. 启动容器
+
+OpenLDAP 是 LDAP 协议的开源实现版本，通过 Dokcer 快速启动 LDAP 服务器。
 
 ```
 docker run --name kiss-ldap --env LDAP_ORGANISATION="KissCloud" --env LDAP_DOMAIN="kisscloud.io" \
@@ -59,6 +59,8 @@ spring.ldap.urls=ldap://localhost:389
 spring.ldap.username=cn=admin,dc=kisscloud,dc=io
 spring.ldap.password=kisscloud
 spring.ldap.base=dc=kisscloud,dc=io
+
+account.ldap.enabled=true 
 ```
 
 ## 4. 参考链接
